@@ -1,0 +1,60 @@
+
+
+.homepage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    background-color: lightgray;
+    height: 100vh;
+}
+
+.homepage>h1{
+    font-size: 45px;
+}
+
+.btnStyles{
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: -12px;
+    z-index: 5;
+}
+
+.btnStyles>button{
+    border-radius: 10px;
+    /* width: 50%; */
+    font-size: 20px;
+    padding: 5px 53px;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+}
+
+.chat-live{
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: livechat 5s linear infinite;
+}
+
+@keyframes livechat {
+    0%{
+        color: rgb(0, 157, 255);
+    }
+    20%{
+        color: rgb(240, 69, 69);
+    }
+    40%{
+        color: greenyellow;
+    }
+    60%{
+        color: rgb(222, 47, 105);
+    }
+    80%{
+        color: yellow;
+    }
+    100%{
+        color: lawngreen;
+    }
+}

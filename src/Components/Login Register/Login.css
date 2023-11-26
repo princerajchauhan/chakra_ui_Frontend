@@ -1,0 +1,93 @@
+.login{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login>form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 30px 60px;
+    border-radius: 8px;
+}
+
+.logstyle{
+    display: flex;
+    justify-content: center;
+    color: transparent;
+    margin-bottom: 30px;
+}
+
+.logstyle>h2{
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logstyle>h2::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    color: blue;
+    border-right: 2px solid red;
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        width: 0;
+    }
+    70%{
+        width: 105%;
+    }
+}
+
+.login>form>input {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+
+.forgot{
+    margin-top: -40px;
+    font-size: 14px;
+    /* float: right; */
+    margin-left: 110px;
+    cursor: pointer;
+}
+.forgot:hover{
+    color: gray;
+}
+
+.submitBtn{
+    border: none;
+    margin-top: 40px;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.submitBtn:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    color: green;
+}
+
+.login>form > p{
+    text-align: center;
+    margin: 15px auto;
+    /* font-size: 14px; */
+}
