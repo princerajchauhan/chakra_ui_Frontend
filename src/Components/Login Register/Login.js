@@ -6,10 +6,13 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from '@chakra-ui/button'
 import { ChatContext } from "../../Context/ChatContext";
+import { BiSolidShow, BiSolidHide } from "react-icons/bi";
 
 const Login = () => {
 
-    const {setUser} = useContext(ChatContext)
+    const { setUser } = useContext(ChatContext)
+
+    const [showHide, setShowHide] = useState(true)
 
     const [value, setValue] = useState({
         email: '',
@@ -23,7 +26,7 @@ const Login = () => {
         setValue({ ...value, [event.target.name]: event.target.value })
     }
 
-    const submitForm = async(e) => {
+    const submitForm = async (e) => {
         e.preventDefault()
         setLoading(true)
         if (!value.email || !value.password) {
@@ -66,7 +69,11 @@ const Login = () => {
                 <input type="email" name='email' value={value.email} onChange={clickHandle} /><br />
 
                 <label htmlFor="">Password</label>
-                <input type="password" name='password' autoComplete="off" value={value.password} onChange={clickHandle} /><br />
+                <input type={showHide ? "password" : "text"} name='password' autoComplete="off" value={value.password} onChange={clickHandle} /><br />
+                {
+                    showHide ? <BiSolidHide className="log-show-hide" onClick={() => setShowHide(!showHide)} /> :
+                        <BiSolidShow className="log-show-hide" onClick={() => setShowHide(!showHide)} />
+                }
 
                 <label className="forgot">Forgot Password</label>
 

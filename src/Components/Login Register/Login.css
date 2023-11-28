@@ -12,6 +12,7 @@
     background-color: white;
     padding: 30px 60px;
     border-radius: 8px;
+    position: relative;
 }
 
 .logstyle{
@@ -90,4 +91,13 @@
     text-align: center;
     margin: 15px auto;
     /* font-size: 14px; */
+}
+
+
+.log-show-hide{
+    position: absolute;
+    right: 65px;
+    bottom: 122px;
+    font-size: 20px;
+    cursor: pointer;
 }

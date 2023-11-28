@@ -6,11 +6,14 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from '@chakra-ui/button'
 import { ChatContext } from "../../Context/ChatContext";
+import { BiSolidShow, BiSolidHide } from "react-icons/bi";
 
 const Signup = () => {
 
-    const {setUser} = useContext(ChatContext)
-    
+    const { setUser } = useContext(ChatContext)
+
+    const [showHide, setShowHide] = useState(true)
+
     const [value, setValue] = useState({
         name: '',
         email: '',
@@ -107,7 +110,11 @@ const Signup = () => {
                 <input type="email" name='email' value={value.email} onChange={clickHandle} required className="input" /><br />
 
                 <label htmlFor="">Password</label>
-                <input type="password" name='password' value={value.password} onChange={clickHandle} required className="input" /><br />
+                <input type={showHide ? "password" : "text"} name='password' value={value.password} onChange={clickHandle} required className="input" /><br />
+                {
+                    showHide ? <BiSolidHide className="pass-show-hide" onClick={() => setShowHide(!showHide)} /> :
+                               <BiSolidShow className="pass-show-hide" onClick={() => setShowHide(!showHide)} />
+                }
 
                 <label htmlFor="">Upload Profile</label>
                 <input type="file" accept="image/*" onChange={(e) => imgDetails(e.target.files[0])} className="profileInput" /><br />
