@@ -113,7 +113,7 @@ const SearchCompo = () => {
                             count={notification.length}
                         /> */}
                         <BellIcon fontSize="2xl" m={1} color="#f9ff0c"/>
-                        <span className='bell-notify'>{notification.length>0?notification.length:''}</span>
+                        <span className='bell-notify'>{notification.length>=1?notification.length:''}</span>
                     </MenuButton>
                     <MenuList pl={2}>
                         {!notification.length && <span style={{color:'black'}}>No New Messages</span>}

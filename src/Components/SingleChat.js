@@ -91,7 +91,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                     chatId: selectedChat._id
                 }, config)
 
-                console.log(data)
+                // console.log(data)
                 socket.emit("newMessage", data)
                 setMessage([...message, data])
 
@@ -174,13 +174,14 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                         }
 
                         <FormControl onKeyDown={sendMsg} isRequired mt={3}>
-                            {istyping ? <div style={{marginLeft: '10px', marginBottom:'5px'}}>typing...</div> : (<></>)}
+                            {istyping ? <div style={{marginLeft: '10px', marginBottom:'5px', color:'white'}}>typing...</div> : (<></>)}
                             <Input
                                 variant="filled"
                                 bg="#E0E0E0"
                                 placeholder="write message here...."
                                 onChange={typeHandler}
                                 value={newMessage}
+                                color="white"
                             />
                         </FormControl>
 
