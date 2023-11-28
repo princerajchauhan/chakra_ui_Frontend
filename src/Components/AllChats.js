@@ -20,7 +20,7 @@ const AllChats = ({ fetchAgain }) => {
                 }
             }
 
-            const { data } = await axios.get(`http://localhost:3009/chat/fetch`, config)
+            const { data } = await axios.get(`https://prince-chat.onrender.com/chat/fetch`, config)
             setChats(data)
         } catch (error) {
             toast("Not found the chats of user", { type: "error", theme: "colored" })

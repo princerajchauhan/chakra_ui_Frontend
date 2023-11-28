@@ -11,7 +11,7 @@ import "./Styles.css"
 import SendReceiveMsg from "./SendReceiveMsg"
 import io from 'socket.io-client'
 
-const socket = io("http://localhost:3009")
+const socket = io("https://prince-chat.onrender.com")
 var selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -43,7 +43,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 }
             }
             // console.log(selectedChat)
-            const { data } = await axios.get(`http://localhost:3009/message/allmsg/${selectedChat._id}`, config)
+            const { data } = await axios.get(`https://prince-chat.onrender.com/message/allmsg/${selectedChat._id}`, config)
             // console.log(message)
             setMessage(data)
             setLoading(false)
@@ -86,7 +86,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                     }
                 }
                 setNewMessage("")
-                const { data } = await axios.post("http://localhost:3009/message/send", {
+                const { data } = await axios.post("https://prince-chat.onrender.com/message/send", {
                     message: newMessage,
                     chatId: selectedChat._id
                 }, config)

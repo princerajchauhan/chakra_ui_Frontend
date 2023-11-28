@@ -57,7 +57,7 @@ const SearchCompo = () => {
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            const { data } = await axios.get(`http://localhost:3009/api/users?search=${search}`, config)
+            const { data } = await axios.get(`https://prince-chat.onrender.com/api/users?search=${search}`, config)
             setLoading(false)
             setSearchResult(data)
         } catch (error) {
@@ -75,7 +75,7 @@ const SearchCompo = () => {
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            const { data } = await axios.post(`http://localhost:3009/chat/access`, { userId }, config)
+            const { data } = await axios.post(`https://prince-chat.onrender.com/chat/access`, { userId }, config)
             if (!chats.find(e => e._id === data._id)) setChats([data, ...chats])
             console.log(data)
             setSelectedChat(data)

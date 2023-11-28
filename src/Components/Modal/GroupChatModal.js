@@ -30,7 +30,7 @@ const GroupChatModal = ({ children }) => {
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            const { data } = await axios.get(`http://localhost:3009/api/users?search=${search}`, config)
+            const { data } = await axios.get(`https://prince-chat.onrender.com/api/users?search=${search}`, config)
             setLoading(false)
             setSearchResult(data)
         } catch (error) {
@@ -54,7 +54,7 @@ const GroupChatModal = ({ children }) => {
                 }
             }
 
-            const { data } = await axios.post("http://localhost:3009/chat/group", {
+            const { data } = await axios.post("https://prince-chat.onrender.com/chat/group", {
                 name: groupName,
                 users: JSON.stringify(selectedUsers.map(u => u._id))
             }, config)

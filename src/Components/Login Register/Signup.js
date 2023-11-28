@@ -70,7 +70,7 @@ const Signup = () => {
                     "Content-Type": "application/json"
                 }
             }
-            await axios.post("http://localhost:3009/api/register",
+            await axios.post("https://prince-chat.onrender.com/api/register",
                 { ...value, profile },
                 config
             ).then(res => {

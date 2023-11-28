@@ -51,7 +51,7 @@ const UpdateGroupModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
                 }
             }
 
-            const { data } = await axios.put("http://localhost:3009/chat/groupadd", {
+            const { data } = await axios.put("https://prince-chat.onrender.com/chat/groupadd", {
                 chatId: selectedChat._id,
                 userId: user1._id
             }, config)
@@ -78,7 +78,7 @@ const UpdateGroupModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
                 }
             }
 
-            const { data } = await axios.put("http://localhost:3009/chat/groupremove", {
+            const { data } = await axios.put("https://prince-chat.onrender.com/chat/groupremove", {
                 chatId: selectedChat._id,
                 userId: user1._id
             }, config)

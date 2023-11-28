@@ -32,7 +32,7 @@ const Login = () => {
             return
         }
         try {
-            await axios.post("http://localhost:3009/api/login", value, {
+            await axios.post("https://prince-chat.onrender.com/api/login", value, {
                 headers: {
                     "Content-Type": "application/json"
                 }
