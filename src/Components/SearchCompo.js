@@ -29,7 +29,7 @@ import axios from 'axios'
 import ChatLoading from './ChatLoading'
 import UserListItem from './User Avatar/UserListItem'
 import { getSender } from './ChatLogics'
-import NotificationBadge from 'react-notification-badge';
+// import NotificationBadge from 'react-notification-badge';
 
 const SearchCompo = () => {
 
@@ -108,14 +108,15 @@ const SearchCompo = () => {
             <Text fontSize='2xl' className='chat-live'>Chat Live</Text>
             <div>
                 <Menu>
-                    <MenuButton p={1}>
-                        <NotificationBadge
+                    <MenuButton p={1}  className='bell-icon'>
+                        {/* <NotificationBadge
                             count={notification.length}
-                        />
+                        /> */}
                         <BellIcon fontSize="2xl" m={1} color="#f9ff0c"/>
+                        <span className='bell-notify'>{notification.length>0?notification.length:''}</span>
                     </MenuButton>
                     <MenuList pl={2}>
-                        {!notification.length && "No New Messages"}
+                        {!notification.length && <span style={{color:'black'}}>No New Messages</span>}
                         {notification.map(notif => (
                             <MenuItem
                                 key={notif._id}
@@ -143,7 +144,7 @@ const SearchCompo = () => {
                     <MenuButton as={Button} rightIcon={<ChevronDownIcon />} >
                         <Avatar size="sm" cursor="pointer" name={user.user.name} src={user.user.profile} />
                     </MenuButton>
-                    <MenuList>
+                    <MenuList style={{color:'black'}}>
                         <ProfileModal user={user.user}>
                             <MenuItem>My Profile</MenuItem>
                         </ProfileModal>

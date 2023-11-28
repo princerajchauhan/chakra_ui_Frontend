@@ -6,3 +6,15 @@
     overflow-y: scroll;
     scrollbar-width: none;
 }
+
+.bell-icon{
+    position: relative;
+}
+
+.bell-notify{
+    position: absolute;
+    top: 0;
+    left: 60%;
+    color: red;
+    font-weight: bold;
+}
