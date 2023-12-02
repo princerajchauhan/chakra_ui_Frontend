@@ -101,22 +101,22 @@ const SearchCompo = () => {
         >
             <Tooltip label="search for users" hasArrow placement='bottom'>
                 <Button onClick={onOpen}>
-                    <i className="fa-solid fa-magnifying-glass" style={{color:'black'}}></i>
-                    <Text display={{ base: 'none', md: 'flex' }} px='4' style={{color:'black'}}>Search user</Text>
+                    <i className="fa-solid fa-magnifying-glass" style={{ color: 'black' }}></i>
+                    <Text display={{ base: 'none', md: 'flex' }} px='4' style={{ color: 'black' }}>Search user</Text>
                 </Button>
             </Tooltip>
             <Text fontSize='2xl' className='chat-live'>Chat Live</Text>
             <div>
                 <Menu>
-                    <MenuButton p={1}  className='bell-icon'>
+                    <MenuButton p={1} className='bell-icon'>
                         {/* <NotificationBadge
                             count={notification.length}
                         /> */}
-                        <BellIcon fontSize="2xl" m={1} color="#f9ff0c"/>
-                        <span className='bell-notify'>{notification.length>=1?notification.length:''}</span>
+                        <BellIcon fontSize="2xl" m={1} color="#f9ff0c" />
+                        <span className='bell-notify'>{notification.length >= 1 ? notification.length : ''}</span>
                     </MenuButton>
                     <MenuList pl={2}>
-                        {!notification.length && <span style={{color:'black'}}>No New Messages</span>}
+                        {!notification.length && <span style={{ color: 'black' }}>No New Messages</span>}
                         {notification.map(notif => (
                             <MenuItem
                                 key={notif._id}
@@ -144,7 +144,7 @@ const SearchCompo = () => {
                     <MenuButton as={Button} rightIcon={<ChevronDownIcon />} >
                         <Avatar size="sm" cursor="pointer" name={user.user.name} src={user.user.profile} />
                     </MenuButton>
-                    <MenuList style={{color:'black'}}>
+                    <MenuList style={{ color: 'black' }}>
                         <ProfileModal user={user.user}>
                             <MenuItem>My Profile</MenuItem>
                         </ProfileModal>
@@ -171,13 +171,14 @@ const SearchCompo = () => {
                     {
                         loading ? <ChatLoading /> :
                             (
-                                searchResult.length>0?searchResult.map(user => (
-                                    <UserListItem
-                                        key={user._id}
-                                        user={user}
-                                        handleFun={() => accessChat(user._id)}
-                                    />
-                                )): <p style={{marginTop:'10px'}}>No Results Found</p>
+                                searchResult.length === 0 ? <p style={{ marginTop: '10px' }}>No Results Found</p> :
+                                    searchResult.map(user => (
+                                        <UserListItem
+                                            key={user._id}
+                                            user={user}
+                                            handleFun={() => accessChat(user._id)}
+                                        />
+                                    ))
                             )
                     }
                     {loadingChat && <Spinner ml='auto' display='flex' />}
