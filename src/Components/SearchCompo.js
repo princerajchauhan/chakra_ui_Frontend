@@ -171,13 +171,13 @@ const SearchCompo = () => {
                     {
                         loading ? <ChatLoading /> :
                             (
-                                searchResult?.map(user => (
+                                searchResult.length>0?searchResult.map(user => (
                                     <UserListItem
                                         key={user._id}
                                         user={user}
                                         handleFun={() => accessChat(user._id)}
                                     />
-                                ))
+                                )): <p style={{marginTop:'10px'}}>No Results Found</p>
                             )
                     }
                     {loadingChat && <Spinner ml='auto' display='flex' />}

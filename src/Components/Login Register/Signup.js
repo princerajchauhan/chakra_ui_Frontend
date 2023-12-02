@@ -30,6 +30,7 @@ const Signup = () => {
     }
 
     const imgDetails = (pics) => {
+        console.log(pics)
         setLoading(true)
         if (pics === undefined) {
             toast("Please Select an image!", { type: 'warning', theme: "colored" })

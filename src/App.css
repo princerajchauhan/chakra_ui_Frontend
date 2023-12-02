@@ -1,6 +1,4 @@
-
-
-.homepage{
+.homepage {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,12 +11,12 @@
     height: 100vh;
 }
 
-.homepage>h1{
+.homepage>h1 {
     font-size: 45px;
     animation: livechathead 3s linear infinite;
 }
 
-.btnStyles{
+.btnStyles {
     background-color: white;
     border-radius: 10px;
     margin-top: 30px;
@@ -26,76 +24,116 @@
     z-index: 5;
 }
 
-.btnStyles>button{
+.btnStyles>button {
     border-radius: 10px;
     /* width: 50%; */
     font-size: 20px;
     padding: 5px 53px;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 0;
 }
 
-.chat-live{
+.chat-live {
     font-weight: bold;
     letter-spacing: 1px;
     animation: livechat 5s linear infinite;
 }
 
 @keyframes livechat {
-    0%{
+    0% {
         color: rgb(0, 157, 255);
     }
-    20%{
+
+    20% {
         color: rgb(240, 69, 69);
     }
-    40%{
+
+    40% {
         color: greenyellow;
     }
-    60%{
+
+    60% {
         color: rgb(222, 47, 105);
     }
-    80%{
+
+    80% {
         color: yellow;
     }
-    100%{
+
+    100% {
         color: lawngreen;
     }
 }
 
 @keyframes livechathead {
-    0%{
+    0% {
         color: rgb(2, 88, 142);
     }
-    10%{
+
+    10% {
         color: rgb(3, 149, 100);
     }
-    20%{
+
+    20% {
         color: rgb(240, 69, 69);
     }
-    40%{
+
+    40% {
         color: rgb(103, 158, 21);
     }
-    50%{
+
+    50% {
         color: brown;
     }
-    60%{
+
+    60% {
         color: rgb(222, 47, 105);
     }
-    70%{
+
+    70% {
         color: white;
     }
-    80%{
+
+    80% {
         color: green;
     }
-    100%{
+
+    100% {
         color: orangered;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .homepage>h1{
+    .homepage>h1 {
         font-size: 35px;
     }
+}
+
+#pic-upload {
+    display: none;
+}
+
+.update-image {
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+    color: green;
+    font-weight: bold;
+    padding: 6px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.update-image:hover {
+    color: red;
+}
+
+.update-camera{
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: rgb(12, 131, 12);
+    padding: 8px;
+    color: white;
 }
